@@ -2,6 +2,7 @@ package pkg;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class RemovePrimeNo 
 {
@@ -28,7 +29,7 @@ public class RemovePrimeNo
     	for(int i=a-1; i>=0; i--)
     	{
     		int n=list.get(i);
-    		if(isprime(n)==true)
+    		if(isprime(n))
     		{
     			list.remove(i);
     		}	
@@ -37,8 +38,15 @@ public class RemovePrimeNo
     }
     public static void main(String[] args) 
     {
-    	Integer [] arr= {1,2,4,7,9};
-    	ArrayList<Integer> list= new ArrayList<>(Arrays.asList(arr));
+    	Scanner sc=new Scanner(System.in);
+    	System.out.println("please enter array size");
+    	int lenth=sc.nextInt();
+    	ArrayList<Integer> list= new ArrayList<>();
+    	System.out.println("Enter your Integer array here ");
+    	for(int i=0;i<lenth;i++)
+    	{
+    		list.add(sc.nextInt());
+    	}
     	System.out.println(list);
     	RemovePrimeNo.removeprime(list);
     	
